@@ -1,0 +1,9 @@
+.DS_Store
+node_modules/
+coverage/
+.sass-cache/
+.idea/
+.tmp/
+/dist/
+.svn/
+*.log
