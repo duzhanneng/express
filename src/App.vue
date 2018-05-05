@@ -8,6 +8,8 @@
 <script>
 import dzntest from 'dzntest'
 console.log(dzntest)
+const a = 1
+console.log(a)
 export default {
   name: 'App'
 }
