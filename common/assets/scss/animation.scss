@@ -1,0 +1,11 @@
+.common-scale-enter-active,
+.common-scale-leave,
+.common-scale-enter-to {
+  transform: scale(1);
+}
+
+.common-scale-leave-active,
+.common-scale-leave-to,
+.common-scale-enter {
+  transform: scale(0);
+}
