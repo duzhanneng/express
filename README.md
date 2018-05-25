@@ -110,6 +110,10 @@ html、css里面调用（前面要加~）
 1、手动更改config下的_config.js文件,执行$ npm start
 2、执行$ npm start appName projectName
 
+多入口使用路由
+
+多入口使用路由需分别配置路由，并配置跟入口文件相同名称的基业（bash属性），可参考demo2项目的路由配置
+
 ```
 
 如果你所使用的过程中有任何疑问或者建议，欢迎提出！
