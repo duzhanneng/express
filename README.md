@@ -40,4 +40,56 @@ $ npm install excel-tobe-json2 -g
 $ npm run excel
 ```
 
+## Project Instruction
+
+项目结构
+
+```bash
+项目整体结构可在'config/paths.js'看到
+
+common 公共目录（包括公共的assets、components、xhr入口等）
+config 项目配置目录
+scripts 对应node执行的相关命令（start、build、excel等）
+static 公共静态资源目录
+src 这个是子项目的总入口，里面会对项目进行分类（bigo、like、cubetv等）
+```
+
+路径别名说明
+
+```bash
+路径别名配置可在'config/alias.js'看到
+
+'XHR': path.resolve(commonPath, 'xhr'), // 公共xhr入口
+'ASSETS': path.resolve(commonPath, 'assets'), // 公共资源文件
+'COMPONENTS': path.resolve(commonPath, 'components'), // 公共组件库
+'@': projectPath, // 子项目根目录
+'@components': path.resolve(projectPath, 'components'), // 子项目组件库
+'@services': path.resolve(projectPath, 'services'), // 子项目接口api库
+'@views': path.resolve(projectPath, 'views'), // 子项目页面
+'@filters': path.resolve(projectPath, 'filters'), // 子项目过滤器
+'@directives': path.resolve(projectPath, 'directives'), // 子项目自定义指令
+'@mixins': path.resolve(projectPath, 'mixins'), // 子项目混合器
+'@store': path.resolve(projectPath, 'store'), // 子项目状态管理库
+'@util': path.resolve(projectPath, 'util'), // 子项目工具包
+'@assets': path.resolve(projectPath, 'assets'), // 子项目资源文件
+'@lang': path.resolve(projectPath, 'lang'), // 子项目语言包
+'@constant': path.resolve(projectPath, 'constant') // 子项目常量
+```
+
+路径别名用法
+
+```bash
+js里面调用
+
+例 import xhr from 'XHR'
+
+html、css里面调用（前面要加~）
+
+例 @import '~@assets/css/...'
+   <img src="~@assets/img/..." alt="alias">
+   background: url('~@assets/img/...') ...
+
+```
+
+
 如果你所使用的过程中有任何疑问或者建议，欢迎提出！
