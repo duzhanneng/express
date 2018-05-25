@@ -83,7 +83,7 @@ src 这个是子项目的总入口，里面会对项目进行分类（bigo、lik
 '@util': path.resolve(projectPath, 'util'), // 子项目工具包
 '@assets': path.resolve(projectPath, 'assets'), // 子项目资源文件
 '@lang': path.resolve(projectPath, 'lang'), // 子项目语言包
-'@constant': path.resolve(projectPath, 'constant') // 子项目常
+'@constant': path.resolve(projectPath, 'constant') // 子项目常量
 ```
 
 路径别名用法
