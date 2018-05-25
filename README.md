@@ -9,6 +9,7 @@
 
 $ npm install bgy-pb -g
 $ bgy-pb init
+
 ```
 
 下载依赖
@@ -23,6 +24,7 @@ $ npm install or $ cnpm install
 npm start后面带相应的参数可快速切换子项目
 
 $ npm start or $ npm start appName projectName
+
 ```
 
 项目打包
