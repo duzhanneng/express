@@ -90,7 +90,7 @@ module.exports = new Promise((resolve, reject) => {
         : undefined
       }))
 
-      opn(uri)
+      // opn(uri)
 
       resolve(devWebpackConfig)
     }
