@@ -1,33 +1,29 @@
 # bgy-fronted-devp
 ===========================
 ## Getting Started
-Install dependencies.
+下载依赖
 
 ```bash
-$ npm install
+$ npm install or $ cnpm install
 ```
 
-Start server.
+启动项目
 
 ```bash
-$ npm start
+$ npm start appName projectName
 ```
 
-BuildDll.
+项目打包
 
 ```bash
-$ npm run buildDll
+$ npm run build
 ```
 
-buildAnalyse: build with BundleAnalyzerPlugin.
+多语言转换(需全局安装excel-tobe-json2)
 
 ```bash
-$ npm run buildAnalyse
+$ npm install excel-tobe-json2 -g
+$ npm run excel
 ```
 
-build.
-
-```bash
-$ npm run build:[uat|pre|prd]
-```
-If success, app will be open in your default browser automatically.
+如果你所使用的过程中有任何疑问或者建议，欢迎提出！
