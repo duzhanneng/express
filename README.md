@@ -6,6 +6,7 @@
 
 ```bash
 项目可依赖于bgy-pb快速生成子项目，全局安装bgy-pb，然后在fronted-devp根目录下执行bgy-pb init
+
 $ npm install bgy-pb -g
 $ bgy-pb init
 ```
