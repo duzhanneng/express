@@ -20,6 +20,8 @@ $ npm install or $ cnpm install
 启动项目
 
 ```bash
+npm start后面带相应的参数可快速切换子项目
+
 $ npm start or $ npm start appName projectName
 ```
 
