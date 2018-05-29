@@ -45,21 +45,21 @@ $ npm run excel
 项目结构
 
 ```bash
-项目整体结构可在'config/paths.js'看到
-
 common 公共目录（包括公共的assets、components、xhr入口等）
 config 项目配置目录
 scripts 对应node执行的相关命令（start、build、excel等）
 static 公共静态资源目录
 src 这个是子项目的总入口，里面会对项目进行分类（bigo、like、cubetv等）
+.editorconfig 这个是对编辑器编写规则的一些配置，如果要用，编辑器安装对应的插件（一般插件名称就叫editorconfig）即可
+.eslintrc.js eslint语法检查相关配置，npm start默认开启语法检查，如果需要编辑器动态检查，需安装对应的插件
 ```
 
 子项目结构
 
 ```bash
-子项目可支持多入口模式，要把所有入口文件放到entry文件夹里面，入口html和vue文件名称必须和entry里面的入口文件一一对应，可参考demo2项目
+子项目可支持多入口模式，要把所有入口文件放到entry文件夹里面，入口html文件名称必须和entry里面的入口文件名称一一对应，可参考demo2项目
 
-每个子项目根目录下都会有config.js文件，对应的是该子项目的相关配置（代理配置、打包地址、多语言转换配置等）
+每个子项目根目录下都会有config.js文件，对应的是该子项目的相关配置（代理配置、打包地址、多语言转换、是否启用pxtorem插件配置等）
 
 详细的目录结构可看demo1项目
 ```
@@ -76,10 +76,7 @@ src 这个是子项目的总入口，里面会对项目进行分类（bigo、lik
 '@components': path.resolve(projectPath, 'components'), // 子项目组件库
 '@services': path.resolve(projectPath, 'services'), // 子项目接口api库
 '@views': path.resolve(projectPath, 'views'), // 子项目页面
-'@filters': path.resolve(projectPath, 'filters'), // 子项目过滤器
-'@directives': path.resolve(projectPath, 'directives'), // 子项目自定义指令
 '@mixins': path.resolve(projectPath, 'mixins'), // 子项目混合器
-'@store': path.resolve(projectPath, 'store'), // 子项目状态管理库
 '@util': path.resolve(projectPath, 'util'), // 子项目工具包
 '@assets': path.resolve(projectPath, 'assets'), // 子项目资源文件
 '@lang': path.resolve(projectPath, 'lang'), // 子项目语言包
@@ -98,7 +95,7 @@ js里面调用
 html、css里面调用（前面要加~）
 
 例 @import '~@assets/css/...'
-   <img src="~@assets/img/..." alt="alias">
+   <img src="~@assets/img/...">
    background: url('~@assets/img/...') ...
 ```
 
