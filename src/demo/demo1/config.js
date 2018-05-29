@@ -18,5 +18,7 @@ module.exports = {
     dataType: 'json',
     // 如果是js文件输出，则此属性有用并表明是一个单纯js文件还是以模块导出。js文件默认模块导出，也即默认true
     module: true
-  }
+  },
+  // 是否启用postcss-pxtorem插件 https://github.com/cuth/postcss-pxtorem
+  pxtorem: true
 }

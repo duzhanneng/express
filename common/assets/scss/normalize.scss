@@ -15,9 +15,9 @@ $legacy_support_for_ie: false !default; // Used also in Compass
 
 
 // Set the default font family here so you don't have to override it later
-$normalized_font_family: sans-serif !default;
+$normalized_font_family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif !default;
 
-$normalize_headings: true !default;
+$normalize_headings: false !default;
 
 $h1_font_size: 2em !default;
 $h2_font_size: 1.5em !default;
@@ -116,8 +116,15 @@ textarea {
 
 // Addresses margins handled incorrectly in IE6/7
 
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style-type: none;
 }
 
 // =============================================================================
@@ -133,13 +140,13 @@ a {
     // 1
 
     background: transparent;
+    text-decoration: none;
+    color: inherit;
 
     // 2
 
     &:focus {
-        outline: none;
-        text-decoration: none;
-        cursor: pointer;
+        outline: thin dotted;
     }
 
     // 3
@@ -147,7 +154,6 @@ a {
     &:hover,
     &:active {
         outline: 0;
-        text-decoration: none;
         cursor: pointer;
     }
 }
@@ -509,6 +515,7 @@ input {
         // on OS X.
         &::-webkit-search-cancel-button,
         &::-webkit-search-decoration {
+            appearance: none;
             -webkit-appearance: none;
         }
     }

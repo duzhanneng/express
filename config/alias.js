@@ -15,10 +15,7 @@ module.exports = {
   '@components': path.resolve(projectPath, 'components'), // 子项目组件库
   '@services': path.resolve(projectPath, 'services'), // 子项目接口api库
   '@views': path.resolve(projectPath, 'views'), // 子项目页面
-  '@filters': path.resolve(projectPath, 'filters'), // 子项目过滤器
-  '@directives': path.resolve(projectPath, 'directives'), // 子项目自定义指令
   '@mixins': path.resolve(projectPath, 'mixins'), // 子项目混合器
-  '@store': path.resolve(projectPath, 'store'), // 子项目状态管理库
   '@util': path.resolve(projectPath, 'util'), // 子项目工具包
   '@assets': path.resolve(projectPath, 'assets'), // 子项目资源文件
   '@lang': path.resolve(projectPath, 'lang'), // 子项目语言包

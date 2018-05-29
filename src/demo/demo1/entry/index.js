@@ -1,9 +1,9 @@
 import Vue from 'COMMON'
-import App from '@'
+import App from '@/app'
 import router from '@/router'
-import store from '@store'
-import '@filters'
-import '@directives'
+import store from '@/store'
+import '@/filters'
+import '@/directives'
 import '@/mock'
 
 new Vue({

@@ -7,7 +7,7 @@ module.exports = {
   },
   build: {
     // build输出路径
-    assetsRoot: path.resolve(process.cwd(), '../dist/like/dzntest')
+    assetsRoot: path.resolve(process.cwd(), '../dist/demo/demo2')
   },
   excel: {
     // excel输入，输出地址，转换的文件类型

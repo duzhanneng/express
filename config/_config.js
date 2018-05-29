@@ -1,4 +1,4 @@
 module.exports = {
-  appName: 'demo',
-  projectName: 'demo1'
+  appName: 'like',
+  projectName: 'page-8282-guidePage'
 }
