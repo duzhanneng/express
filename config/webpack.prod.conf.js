@@ -6,7 +6,6 @@ const webpack = require('webpack')
 const config = require('./')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
@@ -97,13 +96,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     }),
 
     // copy custom static assets
-    new CopyWebpackPlugin([
-      {
-        from: paths.static,
-        to: config.build.assetsSubDirectory,
-        ignore: ['.*']
-      }
-    ])
+    ...utils.getCopyWebpackPlugin()
   ]
 })
 

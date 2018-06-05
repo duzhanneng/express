@@ -2,8 +2,11 @@
   <div class="modal">
     <div class="modal-mask" v-show="value"></div>
     <transition name="common-scale">
-      <div class="modal-dialog" v-if="value">
-        <div class="modal-content" :style="{'width': width}">
+      <div class="modal-dialog" v-show="value">
+        <div class="modal-content" :class="[modalClass]" :style="{'width': width}">
+          <div class="modal-close" @click="$emit('onClose')">
+            <slot name="modal-close"></slot>
+          </div>
           <div class="modal-title">
             <slot name="modal-title"></slot>
           </div>
@@ -13,7 +16,6 @@
           <div class="modal-footer">
             <slot name="modal-footer"></slot>
           </div>
-          <button @click="$emit('onClose')">close</button>
         </div>
       </div>
     </transition>
@@ -53,11 +55,14 @@ export default {
   background-color: rgba(55, 55, 55, 0.6);
 }
 .modal-content {
-  position: relative;
-  min-height: 50%;
+  position: absolute;
+  min-height: 20%;
   background: #fff;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+.modal-close {
+  cursor: pointer;
 }
 </style>

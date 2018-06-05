@@ -4,6 +4,7 @@ const paths = require('./paths')
 const fs = require('fs')
 const config = require('./')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const packageConfig = require('../package.json')
 
@@ -50,6 +51,7 @@ exports.cssLoaders = function (options) {
     if (options.extract) {
       return ExtractTextPlugin.extract({
         use: loaders,
+        publicPath: '../../',
         fallback: 'vue-style-loader'
       })
     } else {
@@ -143,4 +145,25 @@ exports.getHtmlWebpackPlugin = (baseWebpackConfig) => {
     )
   })
   return HtmlWebpackPluginList
+}
+
+exports.getCopyWebpackPlugin = () => {
+  const projectStaticPath = path.resolve(paths.projectPath, 'static')
+  const rootConfig = {
+    from: paths.static,
+    to: config.build.assetsSubDirectory,
+    ignore: ['.*']
+  }
+  const projectConfig = {
+    from: projectStaticPath,
+    to: config.build.assetsSubDirectory,
+    ignore: ['.*']
+  }
+  return [
+    new CopyWebpackPlugin(
+      fs.existsSync(projectStaticPath)
+        ? [rootConfig, projectConfig]
+        : [rootConfig]
+    )
+  ]
 }

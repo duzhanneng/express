@@ -116,7 +116,9 @@ textarea {
 
 // Addresses margins handled incorrectly in IE6/7
 
-* {
+*,
+*:before,
+*:after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;

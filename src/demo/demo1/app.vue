@@ -7,8 +7,6 @@
     <p>路由demo</p>
     <a @click="$router.push('/page1')">page1</a>
     <a @click="$router.push('/page2')">page2</a>
-    <br>
-    <br>
     <router-view/>
     <p>{{mixinDemo}}</p>
     <p>{{'1234567890' | filterDemo}}</p>

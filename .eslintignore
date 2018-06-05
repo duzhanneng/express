@@ -1,7 +1,7 @@
 /scripts/
 /config/
 /dist/
-/static/
+static/
 /common/assets/
 lang/
 /*.js

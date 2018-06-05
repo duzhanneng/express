@@ -23,7 +23,7 @@ $ npm install or $ cnpm install
 ```bash
 npm start后面带相应的参数可快速切换子项目
 
-$ npm start or $ npm start appName projectName
+$ npm start or $ npm start <appName> <projectName>
 
 ```
 
@@ -50,24 +50,40 @@ config 项目配置目录
 scripts 对应node执行的相关命令（start、build、excel等）
 static 公共静态资源目录
 src 这个是子项目的总入口，里面会对项目进行分类（bigo、like、cubetv等）
-.editorconfig 这个是对编辑器编写规则的一些配置，如果要用，编辑器安装对应的插件（一般插件名称就叫editorconfig）即可
+.editorconfig 这个是对编辑器编写规则的一些配置，如果要用，编辑器安装对应的插件即可（一般插件名称就叫editorconfig）
 .eslintrc.js eslint语法检查相关配置，npm start默认开启语法检查，如果需要编辑器动态检查，需安装对应的插件
 ```
 
-子项目结构
+子项目结构（详细的目录结构可看demo1项目）
 
 ```bash
-子项目可支持多入口模式，要把所有入口文件放到entry文件夹里面，入口html文件名称必须和entry里面的入口文件名称一一对应，可参考demo2项目
+assets 资源文件
+components 组件库
+directives 自定义指令库
+entry 入口文件夹
+filters 过滤器
+lang 语言包
+mixins 混合器
+mock mock配置
+router 路由配置（尽量使用懒加载配置方式）
+services 接口api库
+static 静态资源（一般存放不需要经过webpack处理的资源）
+util 工具包
+constant 常量配置（公用常量，映射表等）
+store 状态管理库
+views 页面
+app.vue 根组件
+config.js 代理配置、打包地址、多语言转换、是否启用pxtorem插件配置等
+index.html 
 
-每个子项目根目录下都会有config.js文件，对应的是该子项目的相关配置（代理配置、打包地址、多语言转换、是否启用pxtorem插件配置等）
+用bgy-pb快速生成的子项目并不会所有文件都创建，需要用到自己创建就好
 
-详细的目录结构可看demo1项目
 ```
 
 路径别名说明
 
 ```bash
-路径别名配置可在'config/alias.js'看到，用bgy-pb快速生成的子项目并不会所有文件都创建，需要用到自己创建就好
+路径别名配置可在'config/alias.js'看到
 
 'XHR': path.resolve(commonPath, 'xhr'), // 公共xhr入口
 'ASSETS': path.resolve(commonPath, 'assets'), // 公共资源文件
@@ -102,14 +118,43 @@ html、css里面调用（前面要加~）
 特别说明
 
 ```bash
-子项目之间相互切换方法
+1. 子项目之间相互切换方法
 
-1、手动更改config下的_config.js文件,执行$ npm start
-2、执行$ npm start appName projectName
+* 手动更改config下的_config.js文件,执行$ npm start
+* 执行$ npm start <appName> <projectName>
 
-多入口使用history模式路由说明
+2. 多入口使用（可参考demo2项目）
 
-多入口使用路由使用h5 history模式需分别配置路由，并配置跟入口文件相同名称的基页（bash属性），可参考demo2项目的路由配置
+* 子项目可支持多入口模式，要把所有入口文件放到entry文件夹里面，入口html文件名称必须和entry里面的入口文件名称一一对应
+* 多入口使用路由使用h5 history模式需分别配置路由，并配置跟入口文件相同名称的基页（bash属性）
+
+3. 静态资源static说明
+
+* 子项目的static文件夹需要自行创建，打包后的静态资源都会直接复制到打包后的static文件夹
+* static里面的文件夹分类建议：
+  css 存放样式文件
+  img 存放图片文件
+  js 存放js文件
+  media 存放多媒体文件
+  fonts 存放字体文件 
+
+4. 路由建议采用懒加载方式配置
+
+  routes: [
+    {
+      path: '/page1',
+      name: 'page1',
+      component: () => import('@views/page1')
+    },
+    {
+      path: '/page2',
+      name: 'page2',
+      component: () => import('@views/page2')
+    },
+    ...
+  ]
+
+5. 子项目生成后默认引入flexible.js（移动端设配方案），如不需要请自行在index.html注释或删除
 
 ```
 
