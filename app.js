@@ -15,7 +15,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser())
 // app.use('/dzn', express.static(path.join(__dirname, './index.html')))
 app.use(express.static(path.join(__dirname, './dist')))
-app.use(express.static(path.join(__dirname, './favicon.ico')))
 
 app.get('/', function (req, res) {
   res.render('./dist');
@@ -23,15 +22,15 @@ app.get('/', function (req, res) {
 
 //全局处理
 app.use(function(req, res, next) {
-  // if (/getUser/g.test(req.url)) {
-  //   next();
-  // } else {
-  //   if (req.cookies.testApi) {
-  //     next();
-  //   } else {
-  //     res.send(401);
-  //   }
-  // }
+  if (/getUser/g.test(req.url)) {
+    next();
+  } else {
+    if (req.cookies.testApi) {
+      next();
+    } else {
+      res.send(401);
+    }
+  }
 });
 
 //注册api路由
