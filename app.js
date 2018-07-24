@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser())
 // app.use('/dzn', express.static(path.join(__dirname, './index.html')))
 app.use(express.static(path.join(__dirname, './dist')))
+app.use(express.static(path.join(__dirname, './favicon.ico')))
 
 app.get('/', function (req, res) {
   res.render('./dist');
