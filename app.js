@@ -45,8 +45,8 @@ app.use('/api/userController', userApi);
 
 // 监听端口
 app.listen(8082);
-app.listen(8087);
-console.log('success listen at port:8082,8087......');
+// app.listen(8087);
+console.log('success listen at port:8082......');
 
 // http.createServer(app).listen(8087);
 // http.createServer(app).listen(8088);
