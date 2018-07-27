@@ -16,10 +16,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser())
 
-app.use('/static', express.static(path.join(__dirname, 'dist/static')))
-
+app.use(express.static(path.join(__dirname, 'dist')))
 app.use(require('connect-history-api-fallback')({
-  verbose: true,
+  // verbose: true,
   index: '/'
 }))
 
