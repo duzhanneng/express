@@ -1,6 +1,6 @@
 // node 后端服务器入口
 var http = require('http');
-var userApi = require('./api/userApi');
+// var userApi = require('./api/userApi');
 var fs = require('fs');
 var path = require('path');
 var bodyParser = require('body-parser'); // node.js 中间件，用于处理 JSON, Raw, Text 和 URL 编码的数据
@@ -16,9 +16,9 @@ app.set('views', path.join(__dirname, 'dist'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser())
+app.use(compression())
 
 app.use(express.static(path.join(__dirname, 'dist')))
-app.use(compression())
 app.use(require('connect-history-api-fallback')({
   // verbose: true,
   index: '/'
@@ -42,7 +42,7 @@ app.use(function(req, res, next) {
 });
 
 //注册api路由
-app.use('/api/userController', userApi);
+// app.use('/api/userController', userApi);
 
 // 监听端口
 app.listen(8082);
