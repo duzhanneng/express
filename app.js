@@ -6,7 +6,7 @@ var path = require('path');
 var bodyParser = require('body-parser'); // node.js 中间件，用于处理 JSON, Raw, Text 和 URL 编码的数据
 var cookieParser = require('cookie-parser'); // 解析Cookie的工具。通过req.cookies可以取到传过来的cookie，并把它们转成对象
 var express = require('express');
-// var compression = require('compression');
+var compression = require('compression');
 var app = express();
 
 app.engine( 'html', require( 'ejs' ).__express );
@@ -16,9 +16,9 @@ app.set('views', path.join(__dirname, 'dist'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser())
-// app.use(compression())
 
 app.use(express.static(path.join(__dirname, 'dist')))
+app.use(compression())
 app.use(require('connect-history-api-fallback')({
   // verbose: true,
   index: '/'
