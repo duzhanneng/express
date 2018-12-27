@@ -1,1 +1,0 @@
-webpackJsonp([2],{"5Q28":function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r={render:function(){var e=this.$createElement;return(this._self._c||e)("div",[this._v("\n  home\n")])},staticRenderFns:[]};var a=n("vSla")({},r,!1,function(e){n("LF5Y")},"data-v-45b08d52",null);t.default=a.exports},LF5Y:function(e,t){}});
