@@ -1,0 +1,2 @@
+webpackJsonp([0],{"A/xE":function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var s={render:function(){var t=this.$createElement;return(this._self._c||t)("div",{staticClass:"page2"},[this._v("\n  page2 show\n")])},staticRenderFns:[]};var a=n("C7Lr")({mixins:[],props:{},data:function(){return{}},watch:{},methods:{}},s,!1,function(t){n("Z5td")},"data-v-d0246e50",null);e.default=a.exports},Z5td:function(t,e){}});
+//# sourceMappingURL=https://frontmon-sysop.bigo.sg/map/frontend-devp/sourcemaps/dist/demo/demo1/sourcemaps/0.b54811.js.map
