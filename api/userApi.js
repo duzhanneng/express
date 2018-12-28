@@ -5,9 +5,9 @@ var mysql = require('mysql');
 var $sql = require('../db/sqlMap');
 
 // 连接数据库
-var conn = mysql.createConnection(models.mysql);
+// var conn = mysql.createConnection(models.mysql);
 
-conn.connect();
+// conn.connect();
 var jsonWrite = function(res, ret) {
   if (typeof ret === 'undefined') {
     res.json({
@@ -21,8 +21,16 @@ var jsonWrite = function(res, ret) {
 
 // 增加用户
 router.post('/addUser', function(req, res) {
+  console.log(req.body)
   var sql = $sql.user.add;
   var params = req.body;
+  var str = ''
+  req.on('data', function(chunk) {
+    str += chunk
+  })
+  req.on('end', function(chunk) {
+    console.log(str)
+  })
   if (!params.username || !params.password) {
     res.send(400);
     return;

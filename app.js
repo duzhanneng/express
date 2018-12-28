@@ -29,17 +29,17 @@ app.get('/', function (req, res) {
 });
 
 //全局处理
-app.use(function(req, res, next) {
-  if (/getUser/g.test(req.url)) {
-    next();
-  } else {
-    if (req.cookies.testApi) {
-      next();
-    } else {
-      res.send(401);
-    }
-  }
-});
+// app.use(function(req, res, next) {
+//   if (/getUser/g.test(req.url)) {
+//     next();
+//   } else {
+//     if (req.cookies.testApi) {
+//       next();
+//     } else {
+//       res.send(401);
+//     }
+//   }
+// });
 
 //注册api路由
 app.use('/api/userController', userApi);
